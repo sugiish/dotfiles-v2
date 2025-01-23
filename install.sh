@@ -24,17 +24,25 @@ if ! which brew; then
 fi
 
 #
+# Git
+#
+mkdir -p $HOME/.config/
+symlink_dir $SCRIPT_DIR/git $HOME/.config/git
+
+#
 # mise
 #
-if [[ ! -e "$HOME/.local/bin/mise" ]]; then
-    curl https://mise.run | sh
+if ! which mise; then
+    brew install mise
 fi
 
 #
 # zsh
 #
+if [ ! -e /etc/zshenv ]; then
+    echo "export ZDOTDIR=$HOME/.config/zsh" | sudo tee -a /etc/zshenv
+    sudo chmod 444 /etc/zshenv
+    source /etc/zshenv
+fi
 mkdir -p $HOME/.config/zsh
-ln -sf $SCRIPT_DIR/zsh/zprofile $HOME/.zprofile
-ln -sf $SCRIPT_DIR/zsh/zshenv $HOME/.zshenv
-ln -sf $SCRIPT_DIR/zsh/zshrc $HOME/.zshrc
-brew install coreutils gnu-sed
+symlink_dir $SCRIPT_DIR/zsh $HOME/.config/zsh
