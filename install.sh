@@ -45,8 +45,18 @@ if [ ! -e /etc/zshenv ]; then
     sudo chmod 444 /etc/zshenv
     source /etc/zshenv
 fi
-mkdir -p $HOME/.config/zsh
 symlink_dir $SCRIPT_DIR/zsh $HOME/.config/zsh
 
+#
+# zsh plugins
+#
+brew install sheldon
+symlink_dir $SCRIPT_DIR/sheldon $HOME/.config/sheldon
+brew install pure
+
+#
+# brew packages
+#
 brew install fzf
 brew install ghq
+
