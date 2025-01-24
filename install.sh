@@ -3,6 +3,7 @@ set -veuo pipefail
 
 # https://dev.classmethod.jp/articles/dotfiles-reconstruct-termina-env/
 
+SCRIPT_DIR=$(realpath)
 # スクリプト中で使われるPATHを予め通しておく
 PATH="$PATH:/opt/homebrew/bin"
 PATH="$PATH:$HOME/.local/share/mise/installs/python/latest/bin"
@@ -46,3 +47,6 @@ if [ ! -e /etc/zshenv ]; then
 fi
 mkdir -p $HOME/.config/zsh
 symlink_dir $SCRIPT_DIR/zsh $HOME/.config/zsh
+
+brew install fzf
+brew install ghq
