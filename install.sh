@@ -71,4 +71,5 @@ symlink_dir $SCRIPT_DIR/ghostty $HOME/.config/ghostty
 #
 brew install fzf
 brew install ghq
+brew install awscli
 

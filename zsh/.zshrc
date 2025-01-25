@@ -32,3 +32,4 @@ zle -N _ghq_list_jump
 bindkey '^G' _ghq_list_jump
 
 export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
+eval "$(mise activate zsh --shims)"
