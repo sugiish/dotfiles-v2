@@ -57,7 +57,7 @@ brew install starship
 #
 # ghostty
 #
-brew install starship
+symlink_dir $SCRIPT_DIR/ghostty $HOME/.config/ghostty
 
 #
 # brew packages
