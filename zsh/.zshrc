@@ -17,7 +17,8 @@ alias ls='ls -FG'
 alias la='ls -aFG'
 alias ll='ls -alFG'
 
-fpath+=("$(brew --prefix)/share/zsh/site-functions")
-autoload -U promptinit; promptinit
-prompt pure
+# fpath+=("$(brew --prefix)/share/zsh/site-functions")
+# autoload -U promptinit; promptinit
+# prompt pure
+eval "$(starship init zsh)"
 eval "$(sheldon source)"
