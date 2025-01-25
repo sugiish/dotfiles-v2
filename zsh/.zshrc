@@ -17,8 +17,16 @@ alias ls='ls -FG'
 alias la='ls -aFG'
 alias ll='ls -alFG'
 
-# fpath+=("$(brew --prefix)/share/zsh/site-functions")
-# autoload -U promptinit; promptinit
-# prompt pure
 eval "$(starship init zsh)"
 eval "$(sheldon source)"
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+export FZF_DEFAULT_OPTS='--reverse --border --bind ctrl-k:kill-line'
+export FZF_TMUX_HEIGHT='60%'
+alias gl='cd $(ghq root)/$(ghq list | fzf)'
+function _ghq_list_jump() {
+  gl
+}
+zle -N _ghq_list_jump
+bindkey '^G' _ghq_list_jump
