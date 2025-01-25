@@ -58,6 +58,8 @@ brew install starship
 # vim
 #
 symlink_dir $SCRIPT_DIR/vim $HOME/.config/vim
+curl -fLo $HOME/.local/share/vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 #
 # ghostty

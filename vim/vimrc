@@ -56,3 +56,16 @@ set smartcase
 set incsearch
 set wrapscan
 set hlsearch
+
+" vim-plug config
+call plug#begin("$XDG_DATA_HOME/vim/plugged")
+Plug 'airblade/vim-gitgutter'
+Plug 'cohama/lexima.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+call plug#end()
+
+" NERDTree config
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
