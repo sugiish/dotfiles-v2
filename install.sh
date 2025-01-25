@@ -55,6 +55,11 @@ symlink_dir $SCRIPT_DIR/sheldon $HOME/.config/sheldon
 brew install starship
 
 #
+# vim
+#
+symlink_dir $SCRIPT_DIR/vim $HOME/.config/vim
+
+#
 # ghostty
 #
 symlink_dir $SCRIPT_DIR/ghostty $HOME/.config/ghostty
