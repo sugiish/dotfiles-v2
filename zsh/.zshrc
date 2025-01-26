@@ -17,7 +17,9 @@ alias ls='ls -FG'
 alias la='ls -aFG'
 alias ll='ls -alFG'
 
-eval "$(starship init zsh)"
+fpath+=("$(brew --prefix)/share/zsh/site-functions")
+autoload -U promptinit; promptinit
+prompt pure
 eval "$(sheldon source)"
 
 # Set up fzf key bindings and fuzzy completion

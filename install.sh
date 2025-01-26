@@ -52,7 +52,7 @@ symlink_dir $SCRIPT_DIR/zsh $HOME/.config/zsh
 #
 brew install sheldon
 symlink_dir $SCRIPT_DIR/sheldon $HOME/.config/sheldon
-brew install starship
+brew install pure
 
 #
 # vim
@@ -67,7 +67,7 @@ curl -fLo $HOME/.local/share/vim/autoload/plug.vim --create-dirs \
 symlink_dir $SCRIPT_DIR/ghostty $HOME/.config/ghostty
 
 #
-# brew packages
+# other brew packages
 #
 brew install fzf
 brew install ghq
