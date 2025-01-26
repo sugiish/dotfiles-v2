@@ -64,9 +64,20 @@ Plug 'cohama/lexima.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'obcat/vim-hitspop'
+Plug 'obcat/vim-sclow'
+Plug 'tpope/vim-commentary'
 call plug#end()
 
 " NERDTree config
 nnoremap <silent><C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
+
+" vim-sclow config
+let g:sclow_hide_full_length = 1
+
+" vim-commentary config
+filetype plugin indent on
+nmap <silent><C-_> gcc
+vmap <silent><C-_> gc
 
