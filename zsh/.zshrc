@@ -24,7 +24,7 @@ eval "$(sheldon source)"
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
-export FZF_DEFAULT_OPTS='--reverse --border --bind ctrl-k:kill-line'
+export FZF_DEFAULT_OPTS='--reverse --border --bind ctrl-k:kill-line --color=pointer:#e67172'
 export FZF_TMUX_HEIGHT='60%'
 alias gl='cd $(ghq root)/$(ghq list | fzf)'
 function _ghq_list_jump() {
