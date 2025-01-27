@@ -17,6 +17,7 @@ alias ls='ls -FG'
 alias la='ls -aFG'
 alias ll='ls -alFG'
 
+autoload -Uz compinit; compinit
 fpath+=("$(brew --prefix)/share/zsh/site-functions")
 autoload -U promptinit; promptinit
 prompt pure
