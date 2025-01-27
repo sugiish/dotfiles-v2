@@ -27,9 +27,11 @@ eval "$(sheldon source)"
 source <(fzf --zsh)
 export FZF_DEFAULT_OPTS='--reverse --border --bind ctrl-k:kill-line --color=pointer:#e67172'
 export FZF_TMUX_HEIGHT='60%'
-alias gl='cd $(ghq root)/$(ghq list | fzf)'
 function _ghq_list_jump() {
-  gl
+  jump_dir=$(ghq list | fzf)
+  if [ -n "$jump_dir" ]; then
+    cd "$(ghq root)/$jump_dir"
+  fi
 }
 zle -N _ghq_list_jump
 bindkey '^G' _ghq_list_jump
