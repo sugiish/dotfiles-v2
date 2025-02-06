@@ -53,6 +53,7 @@ symlink_dir $SCRIPT_DIR/zsh $HOME/.config/zsh
 brew install sheldon
 symlink_dir $SCRIPT_DIR/sheldon $HOME/.config/sheldon
 brew install pure
+brew install zsh-completions
 
 #
 # vim

@@ -1,7 +1,7 @@
 autoload -Uz colors
 colors
 
-HISTFILE=${XDG_CACHE_HOME}/.zsh_history
+HISTFILE=${XDG_CACHE_HOME}/zsh/history
 HISTSIZE=10000
 SAVEHIST=100000
 setopt share_history
@@ -17,7 +17,13 @@ alias ls='ls -FG'
 alias la='ls -aFG'
 alias ll='ls -alFG'
 
-autoload -Uz compinit; compinit
+# zsh-completions
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+  autoload -Uz compinit
+  compinit -i -d "$XDG_CACHE_HOME/zsh/compdump"
+fi
+
 fpath+=("$(brew --prefix)/share/zsh/site-functions")
 autoload -U promptinit; promptinit
 prompt pure
@@ -40,4 +46,3 @@ export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 eval "$(mise activate zsh --shims)"
 
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
-
