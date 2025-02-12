@@ -46,6 +46,7 @@ if [ ! -e /etc/zshenv ]; then
     source /etc/zshenv
 fi
 symlink_dir $SCRIPT_DIR/zsh $HOME/.config/zsh
+mkdir -p $XDG_CACHE_HOME/zsh
 
 #
 # zsh plugins
