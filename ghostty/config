@@ -6,3 +6,6 @@ font-feature = "-calt"
 font-feature = "-dlig"
 font-feature = "-liga"
 
+font-family = Menlo
+font-family = Hiragino Kaku Gothic ProN
+
