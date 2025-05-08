@@ -38,6 +38,14 @@ if ! which mise; then
 fi
 
 #
+# Python
+#
+brew install xz
+if ! which python; then
+    $HOME/.local/bin/mise use --global python
+fi
+
+#
 # zsh
 #
 if [ ! -e /etc/zshenv ]; then
